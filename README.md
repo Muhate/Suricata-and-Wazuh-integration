@@ -69,9 +69,12 @@ For setting up Ubuntu Server on VirtualBox, refer to <a href="https://github.com
        ```bash
        sudo apt update && sudo apt upgrade -y && sudo reboot
        ```
-     - Install Wazuh Manager and all other components:
+     - Install Suricata and all other components:
        ```bash
        curl -sO https://packages.wazuh.com/4.9/wazuh-install.sh && sudo bash ./wazuh-install.sh -a
+       sudo apt install software-properties-common
+       sudo add-apt-repository ppa:oisf/suricata-stable
+       sudo apt update
        ```
        
    - **5.6: File Integrity Monitoring on Windows Server 2022**
