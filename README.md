@@ -69,12 +69,12 @@ For setting up Ubuntu Server on VirtualBox, refer to <a href="https://github.com
        ```bash
        sudo apt update && sudo apt upgrade -y && sudo reboot
        ```
-     - Install Suricata and all other components:
+     - Install Suricata - It's important to use the OISF Personal Package Archives (PPA) because OISF maintains a PPA **suricata-stable** that always contains the latest stable release of Suricata:
        ```bash
-       curl -sO https://packages.wazuh.com/4.9/wazuh-install.sh && sudo bash ./wazuh-install.sh -a
        sudo apt install software-properties-common
        sudo add-apt-repository ppa:oisf/suricata-stable
        sudo apt update
+       sudo apt install suricata -y
        ```
        
    - **5.6: File Integrity Monitoring on Windows Server 2022**
