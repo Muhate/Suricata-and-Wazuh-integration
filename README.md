@@ -8,17 +8,15 @@ This home lab project focuses on implementing Network Intrusion Detection using 
 ### 2. Objectives
 
 - Set up a Wazuh server to collect and analyze security data.
-- Set up and configure agents on target systems (Windows and Ubuntu) to monitor specific files and directories for changes.
-- Implement alerting mechanisms to notify administrators of any detected file changes.
-- Generate reports to track changes over time and assess compliance with security policies.
+- Set up and configure Suricata to capture network activity and Wazuh agent to send logs to Wazuh manager.
 
 
 ### 3. Tools and Technologies Used
 
 - **VirtualBox**: Used for creating virtual machines for the lab environment.
 - **Wazuh**: SIEM tool for log management and security monitoring;
-- **Windows Server 2022**: Used as a monitored system;
-- **Ubuntu Server 24.04 LTS**: Used as a monitored system.
+- **Ubuntu Server 24.04 LTS**: Where we will install Suricata and Wazuh agent.
+- **Kali Linux**: Used as an attacker system;
 
 
 ### 4. Lab Setup
@@ -27,12 +25,13 @@ This home lab project focuses on implementing Network Intrusion Detection using 
 The diagram below illustrates how the components will be interconnected all together, along with their description and IP addresses details.
 
 <p align="center">
-<img width="300" alt="Network Diagram" src="https://github.com/user-attachments/assets/d4e4da42-b979-432c-a39f-8d0aa15bf3a8">
+<img width="300" alt="Network Diagram" src="https://github.com/user-attachments/assets/51d355b5-144f-4478-b466-f8704964ecec">
 </p>
+
 
    - **Components**:
      - **Wazuh Manager**: Centralized management console.
-     - **Agent Nodes**: Installed on target systems (Windows and Ubuntu Servers) to collect logs.
+     - **Suricata and Wazuh agent**: Installed on target systems to capture network activity and collect logs, respectively.
 
 ### 5. Installation Steps
    - **5.1. Setting Up VirtualBox**
@@ -41,7 +40,7 @@ For setting up VirtualBox, refer to <a href="https://github.com/Muhate/Setting-U
 <br>
 <br>
    
-   - **5.2: Setting Up Windows 2022 on VirtualBox**
+   - **5.2: Setting Up kali Linux on VirtualBox**
 
 For setting up Windows 2022 on VirtualBox, refer to <a href="https://github.com/Muhate/Install-Windows-on-VirtualBox">this guide</a>
 <br>
@@ -63,8 +62,19 @@ For setting up Ubuntu Server on VirtualBox, refer to <a href="https://github.com
        ```bash
        curl -sO https://packages.wazuh.com/4.9/wazuh-install.sh && sudo bash ./wazuh-install.sh -a
        ```
+
+   - **5.5: Setting Up Suricata on Ubuntu Server 24.04 LTS**
+
+     - After logging into the server, update the package manager:
+       ```bash
+       sudo apt update && sudo apt upgrade -y && sudo reboot
+       ```
+     - Install Wazuh Manager and all other components:
+       ```bash
+       curl -sO https://packages.wazuh.com/4.9/wazuh-install.sh && sudo bash ./wazuh-install.sh -a
+       ```
        
-   - **5.5: File Integrity Monitoring on Windows Server 2022**
+   - **5.6: File Integrity Monitoring on Windows Server 2022**
      
      - After logging into the wazuh dashboard, deploy the agent following the steps indicated in the image below and then hit the button **Deploy new agent**:
 
@@ -86,7 +96,7 @@ After running all the given commands on your windows machine, click the **Close*
 
 If not showing as **active** wait for some minutes and refresh the page.
 
-   - **5.6: Configure the agent to monitor the files or folders you intend to moniotr**
+   - **5.7: Configure the agent to monitor the files or folders you intend to moniotr**
 Now that we already deployed the agent, let configure it. The configurations will be made on the file **ossec.conf** located at **C:\Program Files (x86)\ossec-agent**. Before we change any configuration on it, it is a best practice to make a backup of the file, so copy and rename the file so that anything going wrong we can be able to revert to our functional version. For this demonstration we will be monitoring the folder **C:\Users\Public**, but you are free to choose another directory. So locate the section with **File integrity monitoring** and add the content below inside of that:
 
        ```bash
@@ -139,7 +149,7 @@ As can be seen in the image above, we can see even when the file is edited. We s
 
 
 
-   - **5.6: File Integrity Monitoring on Ubuntu 24.04 Server**
+   - **5.8: File Integrity Monitoring on Ubuntu 24.04 Server**
 
 To deploy the agent on Ubuntu, we follow the same steps as for Windows, we just change the Operating System we choose and run the commands that will be shown.
 On the wazuh manager server, we change the file **ossec.conf** at the directory **/var/ossec/etc** and we change the below values from **no** to **yes**
