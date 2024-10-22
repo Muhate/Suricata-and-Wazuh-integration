@@ -73,7 +73,7 @@ For setting up Ubuntu Server on VirtualBox, refer to <a href="https://github.com
        ```bash
        sudo apt install software-properties-common
        sudo add-apt-repository ppa:oisf/suricata-stable
-       sudo apt update
+       sudo apt update && sudo apt upgrade -y
        sudo apt install suricata -y
        ```
        
