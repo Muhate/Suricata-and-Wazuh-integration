@@ -34,25 +34,25 @@ The diagram below illustrates how the components will be interconnected all toge
      - **Suricata and Wazuh agent**: Installed on target systems to capture network activity and collect logs, respectively.
 
 ### 5. Installation Steps
-   - **5.1. Setting Up VirtualBox**
+   - **5.1. Setting up VirtualBox**
 
 For setting up VirtualBox, refer to <a href="https://github.com/Muhate/Setting-Up-VirtualBox">this guide</a>
 <br>
 <br>
    
-   - **5.2: Setting Up kali Linux on VirtualBox**
+   - **5.2: Setting up Kali Linux on VirtualBox**
 
 For setting up Windows 2022 on VirtualBox, refer to <a href="https://github.com/Muhate/Install-Windows-on-VirtualBox">this guide</a>
 <br>
 <br>
 
-   - **5.3: Setting Up Ubuntu Server 24.04.LTS on VirtualBox**
+   - **5.3: Setting up Ubuntu Server 24.04.LTS on VirtualBox**
 
 For setting up Ubuntu Server on VirtualBox, refer to <a href="https://github.com/Muhate/Install-Ubuntu-on-VirtualBox">this guide</a>
 <br>
 <br>
 
-   - **5.4: Setting Up Wazuh Manager on Ubuntu Server 24.04 LTS**
+   - **5.4: Setting up Wazuh Manager on Ubuntu Server 24.04 LTS**
 
      - After logging into the server, update the package manager:
        ```bash
@@ -63,7 +63,7 @@ For setting up Ubuntu Server on VirtualBox, refer to <a href="https://github.com
        curl -sO https://packages.wazuh.com/4.9/wazuh-install.sh && sudo bash ./wazuh-install.sh -a
        ```
 
-   - **5.5: Setting Up Suricata on Ubuntu Server 24.04 LTS**
+   - **5.5: Setting up Suricata on Ubuntu Server 24.04 LTS**
 
      - After logging into the server, update the package manager:
        ```bash
