@@ -42,7 +42,7 @@ For setting up VirtualBox, refer to <a href="https://github.com/Muhate/Setting-U
    
    - **5.2: Setting up Kali Linux on VirtualBox**
 
-For setting up Windows 2022 on VirtualBox, refer to <a href="https://github.com/Muhate/Install-Windows-on-VirtualBox">this guide</a>
+For setting up Kali Linux on VirtualBox, refer to <a href="https://github.com/Muhate/Install-Windows-on-VirtualBox">this guide</a>
 <br>
 <br>
 
@@ -74,7 +74,7 @@ For setting up Ubuntu Server on VirtualBox, refer to <a href="https://github.com
        sudo apt install software-properties-common
        sudo add-apt-repository ppa:oisf/suricata-stable
        sudo apt update && sudo apt upgrade -y
-       sudo apt install suricata -y
+       sudo apt install suricata jq -y
        ```
        
    - **5.6: File Integrity Monitoring on Windows Server 2022**
