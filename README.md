@@ -90,7 +90,7 @@ For setting up Ubuntu Server on VirtualBox, refer to <a href="https://github.com
        sudo chmod 640 /etc/suricata/rules/*.rules
        ```
 
-       - Edit the Suricata settings in the **/etc/suricata/suricata.yaml** file and set the following variables accordingly:
+     - Edit the Suricata settings in the **/etc/suricata/suricata.yaml** file and set the following variables accordingly:
        ```bash
        HOME_NET: "<YOUR_MACHINE_IP>"
        EXTERNAL_NET: "any"
@@ -108,6 +108,11 @@ For setting up Ubuntu Server on VirtualBox, refer to <a href="https://github.com
        - interface: enp0s3
        ```
 
+- Restart and check the status of Suricata service
+       ```bash
+       sudo systemctl restart suricata
+       sudo systemctl status suricata
+       ```
 
 
 
