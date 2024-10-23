@@ -109,13 +109,28 @@ For setting up Ubuntu Server on VirtualBox, refer to <a href="https://github.com
        ```
 
 - Restart and check the status of Suricata service
+
        ```bash
        sudo systemctl restart suricata
        sudo systemctl status suricata
        ```
 
+   - **5.6: Add the following code inside the file */var/ossec/etc/ossec.conf* on Wazuh agent**
 
+       ```bash
+       <ossec_config>
+         <localfile>
+           <log_format>json</log_format>
+           <location>/var/log/suricata/eve.json</location>
+         </localfile>
+       </ossec_config>
+       ```
 
+- Restart Wazuh agent
+
+       ```bash
+       sudo systemctl restart wazuh-agent
+       ```
 
    - **5.6: File Integrity Monitoring on Windows Server 2022**
      
