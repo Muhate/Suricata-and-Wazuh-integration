@@ -90,6 +90,28 @@ For setting up Ubuntu Server on VirtualBox, refer to <a href="https://github.com
        sudo chmod 640 /etc/suricata/rules/*.rules
        ```
 
+       - Edit the Suricata settings in the **/etc/suricata/suricata.yaml** file and set the following variables accordingly:
+       ```bash
+       HOME_NET: "<YOUR_MACHINE_IP>"
+       EXTERNAL_NET: "any"
+
+       default-rule-path: /etc/suricata/rules
+       rule-files:
+       - "*.rules"
+
+       # Global stats configuration
+       stats:
+       enabled: yes
+
+       # Linux high speed capture support
+       af-packet:
+       - interface: enp0s3
+       ```
+
+
+
+
+
    - **5.6: File Integrity Monitoring on Windows Server 2022**
      
      - After logging into the wazuh dashboard, deploy the agent following the steps indicated in the image below and then hit the button **Deploy new agent**:
