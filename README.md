@@ -85,8 +85,8 @@ For setting up Ubuntu Server on VirtualBox, refer to <a href="https://github.com
 
      - Create **rules** directory, download the Suricata rules to that directory and extract them:
        ```bash
-       cd /tmp/ && curl -LO https://rules.emergingthreats.net/open/suricata-7.0.3/emerging-all.rules.tar.gz
-       sudo tar -xvzf emerging-all.rules.tar.gz && sudo mkdir /etc/suricata/rules && sudo mv rules/*.rules /etc/suricata/rules/
+       cd /tmp/ && curl -LO https://rules.emergingthreats.net/open/suricata-7.0.3/emerging.rules.tar.gz
+       sudo tar -xvzf emerging.rules.tar.gz && sudo mkdir /etc/suricata/rules && sudo mv rules/*.rules /etc/suricata/rules/
        sudo chmod 640 /etc/suricata/rules/*.rules
        ```
 
