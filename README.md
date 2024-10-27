@@ -108,11 +108,10 @@ For setting up Ubuntu Server on VirtualBox, refer to <a href="https://github.com
        - interface: enp0s3
        ```
 
-- Restart and check the status of Suricata service
-
+     - Restart and check the status of Suricata service:
        ```bash
-       sudo systemctl restart suricata
-       sudo systemctl status suricata
+       sudo systemctl restart suricata.service
+       sudo systemctl status suricata.service
        ```
 
    - **5.6: Add the following code inside the file */var/ossec/etc/ossec.conf* on Wazuh agent**
