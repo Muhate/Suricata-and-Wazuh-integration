@@ -134,11 +134,12 @@ For setting up Ubuntu Server on VirtualBox, refer to <a href="https://github.com
 
 To check whether our configuration are working or no, we open one machine with NMAP installed and run the command below, then we check if that scan will be triggered.
 
-       ```
+
+       ```bash
        nmap -A 192.168.10.4
        ```
 
-As can be seen, the scan was triggered
+As can be seen on the image below, the scan was triggered
 
 <p align="center">
 <img width="812" alt="Scan triggered" src="https://github.com/user-attachments/assets/b045789e-441b-4f99-906f-b757d2f6c5a4">
