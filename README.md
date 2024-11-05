@@ -2,7 +2,7 @@
 
 ### 1. Description
 
-This home lab project focuses on implementing Network Intrusion Detection using Suricata and Wazuh. Suricata is an open-source and high performance Intrusion Detection System (IDS) and Intrusion Prevention System (IPS) with capable of network analysis and threat detection software, and Wazuh is an open-source security monitoring solution. suricata will be installed on an Ubuntu 24.04 server to monitor its traffic. It is crucial to monitor the network to detect some anomalies on the traffic, as it can be an indication of an attack. We will use one kali machine to emulate some attacks (nmap and ping) and check if Suricata will be able to detect them with the Suricata network traffic inspection capabilities.
+This home lab project focuses on implementing Network Intrusion Detection using Suricata and Wazuh. Suricata is an open-source and high performance Intrusion Detection System (IDS) and Intrusion Prevention System (IPS) with capable of network analysis and threat detection software, and Wazuh is an open-source security monitoring solution. suricata will be installed on an Ubuntu 24.04 server to monitor its traffic. It is crucial to monitor the network to detect some anomalies on the traffic, as it can be an indication of an attack. We will use one kali machine to emulate some attacks/scans with nmap and check if Suricata will be able to detect them with the Suricata network traffic inspection capabilities.
 
 
 ### 2. Objectives
@@ -146,15 +146,9 @@ As can be seen on the image below, the scan was triggered
 
 ### 6. **Conclusion**
    - This project successfully demonstrated:
-<p>
--- The deployment of wazuh server, along with manager, indexer and dashboard, on Ubuntu 24.04 Server;
-</p>
-<p>
--- The deployment of wazuh agent on Ubuntu 24.04 Server and Windows Server 2022;
-</p>
-<p>
--- The File Integrity Monitoring on both Windows and Ubuntu.
-</p>
+   - The Suricata installation on Ubuntu Server 24.04 LTS and its configuration to detect anomalies on the server traffic;
+   - The Wazuh installation on Ubuntu Server 24.04 LTS;
+   - The Wazuh and Suricata integration and detected nmap scans with them both.
 
 
 ### 7. **Contact Information**
